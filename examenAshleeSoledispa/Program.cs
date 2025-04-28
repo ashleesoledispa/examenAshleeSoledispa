@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore; // Corrige el error al incluir la directiva using necesaria
+using examenAshleeSoledispa.Models;
+using examenAshleeSoledispa.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ExamenAshleeSoledispa.Models.ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); // Usa la extensión UseSqlServer correctamente
 
 var app = builder.Build();
 
