@@ -10,11 +10,12 @@ using examenAshleeSoledispa.Models;
 
 namespace examenAshleeSoledispa.Controllers
 {
-    public class PlanRecompensasController : Controller
+    public class PlanRecompensaController : Controller
     {
         private readonly examenAshleeSoledispaContext _context;
 
-        public PlanRecompensasController(examenAshleeSoledispaContext context)
+
+        public PlanRecompensaController(examenAshleeSoledispaContext context)
         {
             _context = context;
         }
