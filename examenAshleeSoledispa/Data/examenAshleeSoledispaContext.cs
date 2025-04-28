@@ -15,5 +15,7 @@ namespace examenAshleeSoledispa.Data
         }
 
         public DbSet<examenAshleeSoledispa.Models.Cliente> Cliente { get; set; } = default!;
+        public DbSet<examenAshleeSoledispa.Models.Reserva> Reserva { get; set; } = default!;
+        public DbSet<examenAshleeSoledispa.Models.PlanRecompensa> PlanRecompensa { get; set; } = default!;
     }
 }
