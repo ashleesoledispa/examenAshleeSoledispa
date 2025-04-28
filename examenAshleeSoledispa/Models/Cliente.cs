@@ -11,7 +11,6 @@ namespace examenAshleeSoledispa.Models
         [Required]
         [Range(18, 100)]
         public int Edad { get; set; }
-        [Required]
         [DataType(DataType.Currency)]
         public decimal Saldo { get; set; }
         [Required]
