@@ -1,13 +1,12 @@
-using Microsoft.EntityFrameworkCore; // Corrige el error al incluir la directiva using necesaria
-using examenAshleeSoledispa.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using examenAshleeSoledispa.Data;
-
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<examenAshleeSoledispaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("examenAshleeSoledispaContext") ?? throw new InvalidOperationException("Connection string 'examenAshleeSoledispaContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ExamenAshleeSoledispa.Models.ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); // Usa la extensión UseSqlServer correctamente
 
 var app = builder.Build();
 

@@ -1,8 +1,31 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container text-center mt-5">
+
+    <h1 class="display-4 mb-4">Examen P1: Bienvenido a la Reserva de Hotel</h1>
+
+    <div class="d-flex justify-content-center">
+        <img src="~/images/mimeme.jpg" alt="Meme divertido" class="rounded shadow" style="width:400px; height:500px;" />
+    </div>
+
+    <div class="mt-5">
+        <h4 class="mb-3">¡Cuéntanos algo!</h4>
+
+        <div class="input-group input-group-lg mb-3 justify-content-center" style="max-width:600px; margin:auto;">
+            <input type="text" id="inputHobbie" class="form-control" placeholder="Escribe algo aquí..." aria-label="Texto de hobbie">
+            <button class="btn btn-outline-info" type="button" onclick="mostrarAlerta()">Mostrar Mensaje</button>
+        </div>
+    </div>
+
 </div>
+
+@section Scripts {
+    <script>
+        function mostrarAlerta() {
+            var valor = document.getElementById("inputHobbie").value;
+            alert("Mi nombre es Ashlee Soledispa, mi hobbie es correr e ir al gym y el valor del campo de texto es: " + valor);
+        }
+    </script>
+}
